@@ -1,40 +1,55 @@
-<script>
-  function customTranslate() {
-    var userInput = document.getElementById("userInput").value;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letter Combination Translator</title>
+  <script>
+    function customTranslate() {
+      var userInput = document.getElementById("userInput").value;
 
-    var replacements = [
-      ["f", "pfa"],
-      ["g", "l"],
-      ["w", "v"],
-      ["t", "edt"],
-      ["au", "y"],
-      ["a", "ey"],
-      ["oo", "ou"],
-      ["f", "v"],
-      ["Deo", "craig"],
-      ["ot", "it"],
-      ["sh", "cyz"],
-      ["au", "an"],
-      ["is", "es"],
-      ["on", "anai"],
-      ["ei", "eeiu"],
-      ["ough", "euw"],
-      ["th", "dah"],
-      ["ll", "lska"],
-      ["er", "eiro"],
-      ["end", "an"],
-    ];
+      var replacements = [
+        ["f", "pfa"],
+        ["g", "l"],
+        ["w", "v"],
+        ["t", "edt"],
+        ["au", "y"],
+        ["a", "ey"],
+        ["oo", "ou"],
+        ["f", "v"],
+        ["Deo", "craig"],
+        ["ot", "it"],
+        ["sh", "cyz"],
+        ["au", "an"],
+        ["is", "es"],
+        ["on", "anai"],
+        ["ei", "eeiu"],
+        ["ough", "euw"],
+        ["th", "dah"],
+        ["ll", "lska"],
+        ["er", "eiro"],
+        ["end", "an"]
+      ];
 
-    // Perform replacements
-    for (var i = 0; i < replacements.length; i++) {
-      var pattern = replacements[i][0];
-      var replacement = replacements[i][1];
-      var regex = new RegExp(pattern, "g");
+      // Perform replacements
+      for (var i = 0; i < replacements.length; i++) {
+        var pattern = replacements[i][0];
+        var replacement = replacements[i][1];
+        var regex = new RegExp(pattern, "g");
 
-      userInput = userInput.replace(regex, replacement);
+        userInput = userInput.replace(regex, replacement);
+      }
+
+      // Display the translated text
+      document.getElementById("output").textContent = userInput;
     }
+  </script>
+</head>
+<body>
+  <label for="userInput">Enter text:</label>
+  <input type="text" id="userInput">
+  <button onclick="customTranslate()">Translate</button>
 
-    // Display the translated text
-    document.getElementById("output").textContent = userInput;
-  }
-</script>
+  <p id="output"></p>
+</body>
+</html>
