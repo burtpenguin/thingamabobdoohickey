@@ -61,10 +61,10 @@
         ["y", "ia"],
         ["t", "dt"],
         ["au", "ä"],
-        ["u", "ü"],  // Add a comma here
+        ["u", "ü"],
         ["ai", "ey"],
         ["oo", "ou"],
-        ["ss", "scür"],   // This replacement already exists, remove it
+        ["ss", "scür"],
         ["Deo", "craig"],
         ["ot", "itar"],
         ["ea", "ahne"],
@@ -97,7 +97,7 @@
       for (var i = 0; i < replacements.length; i++) {
         var pattern = replacements[i][0];
         var replacement = replacements[i][1];
-        var regex = new RegExp(pattern, "g");
+        var regex = new RegExp(pattern, "gi");
 
         userInput = userInput.replace(regex, replacement);
       }
